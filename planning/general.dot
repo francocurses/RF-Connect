@@ -1,0 +1,13 @@
+digraph {
+    {
+        user[shape=box];
+        instrument[shape=box];
+    }
+
+    user -> cli_interface [label="inputs"];
+    cli_interface -> user [label="shows"];
+    cli_interface -> instr_controller [label="sends request"];
+    instr_controller -> cli_interface [label="updates"];
+    instr_controller -> instrument [label="sends comm"];
+    instrument -> instr_controller [label="informs"];
+}
